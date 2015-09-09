@@ -33,13 +33,13 @@ Starting the email Tag Helper
 
 In this section we will write a tag helper that updates an email tag. For example:
 
-.. code-block:: HTML
+.. code-block:: html
 
 	<email>Support</email>
 
 The server will use our email tag helper to convert that markup into the following:
 
-.. code-block:: HTML
+.. code-block:: html
 
 	<a href="mailto:Support@contoso.com">Support@contoso.com</a>
 
@@ -69,7 +69,7 @@ That is, an anchor tag that makes this an email link. You might want to do this 
 .. wildcard syntax
 
 .. literalinclude:: authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml
-   :language: aspx-cs
+   :language: html
    :emphasize-lines: 2,3
 
 The code above uses the wildcard syntax to specify all the tag helpers in our assembly will be available. The first string after ``@addTagHelper`` specifies the tag helper to load (we are using "\*" for all tag helpers), and the second string "AuthoringTagHelpers" specifies the assembly the tag helper is in. Also, note that the second line brings in the ASP.NET 5 MVC 6 tag helpers using the wildcard syntax (those helpers are discussed in :doc:`intro`.) It's the ``@addTagHelper`` directive that makes the tag helper available to the Razor view. Alternatively, you can provide the fully qualified name (FQN) of a tag helper as shown below:
@@ -77,7 +77,7 @@ The code above uses the wildcard syntax to specify all the tag helpers in our as
 .. FQN syntax
 
 .. literalinclude:: authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImports.cshtml
-   :language: aspx-cs
+   :language: html
    :lines: 1-3
    :emphasize-lines: 3
 
@@ -86,7 +86,7 @@ To add a tag helper to a view using a FQN, you first add the FQN (``AuthoringTag
 3. Update the markup in the *Views/Home/Contact.cshtml* file with these changes:
 
 .. literalinclude::  authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/Contact.cshtml
-   :language: aspx-cs
+   :language: html
    :emphasize-lines: 15-16
    :lines: 1-17
    
@@ -122,7 +122,7 @@ That approach works for the attribute "href" as long as it doesn't currently exi
 3. Update the markup in the *Views/Home/Contact.cshtml* file with these changes:
 
 .. literalinclude::  authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/ContactCopy.cshtml
-   :language: aspx-cs
+   :language: html
    :emphasize-lines: 15-16 
    :lines: 1-17
  
@@ -159,7 +159,7 @@ In this section we'll write an asynchronous email helper.
 2. Make the following change to the *Views/Home/Contact.cshtml* file so the tag helper can get the target email.
 
 .. literalinclude::  authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/Contact.cshtml
-   :language: aspx-cs
+   :language: html
    :emphasize-lines: 15-16 
    :lines: 1-17
 
@@ -181,7 +181,7 @@ The bold Tag Helper
 2. Modify the *About.cshtml* view to contain a ``bold`` attribute value. The completed code is shown below.
 
 .. literalinclude::  authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/AboutBoldOnly.cshtml
-   :language: aspx-cs
+   :language: html
    :lines: 1-10
    :emphasize-lines: 7-10        
   
@@ -252,15 +252,15 @@ The lower kebab case tag ``<website-information />`` would not match. If you wan
 5. Add the following markup to the *About.cshtml* view. The highlighted markup displays the web site information.
 
 .. literalinclude::  authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/About.cshtml
-   :language: aspx-cs
+   :language: html
    :emphasize-lines: 1,12-20  
    :lines: 1-20
 
 **Note:** In the Razor markup shown below:
 
 .. literalinclude::  authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/About.cshtml
-   :language: aspx-cs
-   :lines: 14-20
+   :language: html
+   :lines: 13-17
    
 Razor knows the ``info`` attribute is a class, not a string, and you want to write C# code. Any non-string tag helper attribute should be written without the ``@`` character.
 
@@ -271,8 +271,8 @@ Razor knows the ``info`` attribute is a class, not a string, and you want to wri
 - You can use the following markup with a closing tag and remove the line with ``TagMode.StartTagAndEndTag`` in the tag helper:
 
 .. literalinclude::  authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/AboutNotSelfClosing.cshtml
-   :language: aspx-cs
-   :lines: 14-19
+   :language: html
+   :lines: 13-18
 
 Condition Tag Helper
 ---------------------------------
@@ -287,7 +287,7 @@ The condition tag helper renders output when passed a true value.
 2. Replace the contents of the *Views/Home/Index.cshtml* file with the following markup:
 
 .. literalinclude::  authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/Index.cshtml
-   :language: aspx-cs
+   :language: html
 
 3. Replace the ``Index`` method in the ``Home`` controller with the following code:
 
@@ -327,7 +327,7 @@ Because these two helpers are closely related and we may refactor them in the fu
 2. Add the following markup to the end of the *Views/Home/Contact.cshtml* file:
 
 .. literalinclude::  authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/Contact.cshtml
-   :language: aspx-cs
+   :language: html
    :lines: 1-19
    :emphasize-lines: 19
 
