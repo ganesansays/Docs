@@ -182,8 +182,8 @@ The bold Tag Helper
 
 .. literalinclude::  authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/AboutBoldOnly.cshtml
    :language: html
-   :lines: 1-10
-   :emphasize-lines: 7-10        
+   :lines: 1-9
+   :emphasize-lines: 7        
   
 3. Run the app. You can use your favorite browser to inspect the source and verify that the markup has changed as promised.
 
